@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@google-cloud/datastore": "^2.0.0"
+    "nodemailer": "^4.6.8"
   }
 }
