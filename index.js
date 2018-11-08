@@ -1,6 +1,6 @@
 'use strict';
 
-exports.suscriptor = function (req, res) {
+exports.correo = function (req, res) {
 
     const correo = req.body.email || req.query.email;
     if (correo){
