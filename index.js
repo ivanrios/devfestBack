@@ -2,6 +2,15 @@
 
 exports.suscriptor = function (req, res) {
 
+    res.header('Content-Type', 'application/json');
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+
+    //respond to CORS preflight requests
+    if (req.method == 'OPTIONS') {
+        res.status(204).send('');
+    }
+
     const email = req.body.email || req.query.email;
     if (email){
         const Datastore = require('@google-cloud/datastore');
