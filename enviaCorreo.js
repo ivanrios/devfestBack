@@ -8,10 +8,15 @@ module.exports.enviaCorreo = function(correo, callback){
 	nodemailer.createTestAccount((err, account) => {
 
 	    let transporter = nodemailer.createTransport({
-	        service: 'FastMail', 
-		     auth: {
-		         user: 'ivanrios@fastmail.com',
-		         pass: 'e7krqv2yfu4qbwka'
+            host: 'xjdz2.dailyrazor.com',
+            port: 465,
+            secure: true,
+            tls: {
+                rejectUnauthorized: false
+            },		     
+            auth: {
+		         user: 'devfest@ivanrios.info',
+                 pass: 'zfR&G&Kq^6,a'
 		     }
 	    });
 
@@ -24,8 +29,8 @@ module.exports.enviaCorreo = function(correo, callback){
 	    body += '</table>'
 
 	    let mailOptions = {
-		  to      : 'ivanrios.a@gmail.com',
-		  from    : 'MKT Agency <'+correo.correo+'>',
+		  to      : 'ivanrios.labs@gmail.com',
+          from    : 'MKT Agency <devfest@ivanrios.info>',
 		  subject : 'New Contact',
 		  html    : body
 	    };
